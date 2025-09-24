@@ -1,0 +1,13 @@
+version: "3.0"
+
+services:
+    xampp:
+        build: .
+        working_dir: /opt/lampp/htdocs
+        container_name: xampp_environment
+        ports:
+            - "8888:80" 
+        volumes:
+            - ./my_applications:/opt/lampp/htdocs
+            - ./apache_conf:/opt/lampp/apache2/conf.d
+            # - ./my-database/:/opt/lampp/var/mysql
